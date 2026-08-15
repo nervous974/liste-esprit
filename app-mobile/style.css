@@ -1,0 +1,515 @@
+/* ===== Reset & base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #141414;
+  --bg2: #1a1a1a;
+  --bg3: #222222;
+  --card: #1f1f1f;
+  --card-done: #1a2a1a;
+  --border: #2a2a2a;
+  --gold: #f4c95d;
+  --gold2: #c47d0a;
+  --text: #f0f0f0;
+  --text2: #aaaaaa;
+  --accent: #1f6f5d;
+  --accent2: #288d75;
+  --danger: #8f1d1d;
+  --rare: #3a7bd5;
+  --epic: #7c3aed;
+  --legend: #e58c18;
+  --mythic: #d946ef;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ===== Header ===== */
+#header {
+  background: #111111;
+  padding: 12px 14px 0;
+  box-shadow: 0 2px 8px #0008;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+#header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+#header h1 {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* Anneau progression */
+#progress-ring-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+#progress-ring {
+  width: 44px;
+  height: 44px;
+  transform: rotate(-90deg);
+}
+#ring-bg {
+  fill: none;
+  stroke: #333;
+  stroke-width: 4;
+}
+#ring-fill {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 113;
+  stroke-dashoffset: 113;
+  transition: stroke-dashoffset 0.4s ease;
+}
+#progress-pct {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* Barre de progression */
+#progress-bar-wrap {
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+#progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold2), var(--gold));
+  width: 0%;
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+#progress-text {
+  font-size: 11px;
+  color: var(--text2);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Recherche */
+#search-wrap {
+  margin-bottom: 8px;
+}
+#search {
+  width: 100%;
+  padding: 9px 14px;
+  background: var(--bg3);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  outline: none;
+  -webkit-appearance: none;
+}
+#search:focus {
+  border-color: var(--gold2);
+}
+#search::placeholder {
+  color: var(--text2);
+}
+
+/* Filtres */
+#filters {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-width: none;
+}
+#filters::-webkit-scrollbar {
+  display: none;
+}
+.filter-btn {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  border: 1.5px solid var(--border);
+  background: var(--bg3);
+  color: var(--text2);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.filter-btn.active {
+  background: var(--gold2);
+  border-color: var(--gold);
+  color: #111;
+}
+.filter-btn[data-rarity="Rare"].active {
+  background: var(--rare);
+  border-color: var(--rare);
+  color: #fff;
+}
+.filter-btn[data-rarity="Epic"].active {
+  background: var(--epic);
+  border-color: var(--epic);
+  color: #fff;
+}
+.filter-btn[data-rarity="Legendary"].active {
+  background: var(--legend);
+  border-color: var(--legend);
+  color: #111;
+}
+.filter-btn[data-rarity="Mythic"].active {
+  background: var(--mythic);
+  border-color: var(--mythic);
+  color: #fff;
+}
+
+/* ===== Liste ===== */
+#list-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 10px 80px;
+  overscroll-behavior: contain;
+}
+
+/* Groupes par esprit */
+.sprite-group {
+  margin-bottom: 8px;
+}
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--bg3);
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+}
+.group-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #111;
+  flex-shrink: 0;
+}
+.group-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #333;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: #666;
+  font-weight: 700;
+}
+.group-info {
+  flex: 1;
+  min-width: 0;
+}
+.group-name {
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.group-sub {
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 2px;
+}
+.rarity-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+.rarity-Rare {
+  background: var(--rare);
+  color: #fff;
+}
+.rarity-Epic {
+  background: var(--epic);
+  color: #fff;
+}
+.rarity-Legendary {
+  background: var(--legend);
+  color: #111;
+}
+.rarity-Mythic {
+  background: var(--mythic);
+  color: #fff;
+}
+
+.group-chevron {
+  font-size: 14px;
+  color: var(--text2);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.group-collapsed .group-chevron {
+  transform: rotate(-90deg);
+}
+
+/* Variantes sous le groupe */
+.variant-list {
+  display: flex;
+  flex-direction: column;
+}
+.group-collapsed .variant-list {
+  display: none;
+}
+
+.variant-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.variant-row:last-child {
+  border-radius: 0 0 var(--radius) var(--radius);
+  border-bottom: none;
+}
+.variant-row:active {
+  background: #2a2a2a;
+}
+.variant-row.owned {
+  background: var(--card-done);
+}
+
+.variant-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  object-fit: contain;
+  background: #111;
+  flex-shrink: 0;
+  border: 1.5px solid #333;
+}
+.variant-icon-placeholder {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  background: #2a2a2a;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #555;
+  border: 1.5px solid #333;
+}
+
+.variant-label {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text2);
+}
+.variant-row.owned .variant-label {
+  color: var(--text);
+}
+
+.variant-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #444;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+.variant-row.owned .variant-dot {
+  background: #2d8c48;
+  border-color: #2d8c48;
+}
+.variant-row.owned .variant-dot::after {
+  content: "✓";
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.variant-crown {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1.5px solid #444;
+  background: #232323;
+  color: #8b8b8b;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.variant-crown:active {
+  transform: scale(0.94);
+}
+.variant-crown.active {
+  background: #3b2d09;
+  border-color: #f4c95d;
+  color: #f4c95d;
+}
+
+.variant-row.mastered {
+  box-shadow: inset 0 0 0 1px #5f4a11;
+}
+
+/* ===== Barre Export / Import ===== */
+#save-bar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 10px 14px;
+}
+.save-btn {
+  flex: 1;
+  padding: 11px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: opacity 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.save-btn:active {
+  opacity: 0.75;
+}
+.save-btn.export {
+  background: var(--accent);
+  color: #fff;
+}
+.save-btn.import {
+  background: #333;
+  color: var(--gold);
+}
+
+/* ===== FAB reset ===== */
+#fab-reset {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--danger);
+  color: #fff;
+  font-size: 22px;
+  border: none;
+  box-shadow: 0 4px 14px #0006;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.15s,
+    background 0.15s;
+}
+#fab-reset:active {
+  transform: scale(0.92);
+  background: #b32121;
+}
+
+/* ===== Message vide ===== */
+#empty-msg {
+  text-align: center;
+  color: var(--text2);
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+/* ===== Toast ===== */
+#toast {
+  position: fixed;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #222;
+  color: var(--gold);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px #0006;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+  z-index: 30;
+  white-space: nowrap;
+}
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===== Safe area mobile ===== */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #list-container {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+  #fab-reset {
+    bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+}

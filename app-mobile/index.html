@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#f4c95d" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Esprits FN" />
+    <title>Tracker Esprits Fortnite</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- En-tête collant -->
+      <header id="header">
+        <div id="header-top">
+          <h1>ESPRITS FORTNITE</h1>
+          <div id="progress-ring-wrap">
+            <svg id="progress-ring" viewBox="0 0 44 44">
+              <circle id="ring-bg" cx="22" cy="22" r="18" />
+              <circle id="ring-fill" cx="22" cy="22" r="18" />
+            </svg>
+            <span id="progress-pct">0%</span>
+          </div>
+        </div>
+
+        <div id="progress-bar-wrap">
+          <div id="progress-bar"></div>
+        </div>
+        <div id="progress-text">0 / 117 obtenus</div>
+
+        <!-- Barre de recherche -->
+        <div id="search-wrap">
+          <input
+            id="search"
+            type="search"
+            placeholder="Rechercher un esprit..."
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Filtres rapides -->
+        <div id="filters">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="missing">Manquants</button>
+          <button class="filter-btn" data-filter="owned">Obtenus</button>
+          <button class="filter-btn" data-rarity="Rare">Rare</button>
+          <button class="filter-btn" data-rarity="Epic">Épique</button>
+          <button class="filter-btn" data-rarity="Legendary">Légendaire</button>
+          <button class="filter-btn" data-rarity="Mythic">Mythique</button>
+        </div>
+      </header>
+
+      <!-- Liste des esprits -->
+      <main id="list-container">
+        <div id="sprite-list"></div>
+        <div id="empty-msg" hidden>Aucun résultat.</div>
+      </main>
+
+      <!-- Barre export / import -->
+      <div id="save-bar">
+        <button id="btn-export" class="save-btn export">
+          ⬇ Exporter ma progression
+        </button>
+        <label id="btn-import-label" class="save-btn import">
+          ⬆ Importer
+          <input id="btn-import" type="file" accept=".json" hidden />
+        </label>
+      </div>
+
+      <!-- Bouton flottant reset -->
+      <button id="fab-reset" title="Tout remettre à zéro">↺</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
