@@ -7,7 +7,13 @@
 // ── Données des sprites ──────────────────────────────────────
 
 const SPRITES = [
-  { id: "WATER", nom: "Eau", rarity: "Rare", slug: "water" },
+  {
+    id: "WATER",
+    nom: "Eau",
+    rarity: "Rare",
+    slug: "water",
+    season: "Chapitre 7 - Saison 3",
+  },
   { id: "EARTH", nom: "Terre", rarity: "Rare", slug: "earth" },
   { id: "FIRE", nom: "Feu", rarity: "Rare", slug: "fire" },
   { id: "FISHY", nom: "Poiscaille", rarity: "Rare", slug: "fishy" },
@@ -41,6 +47,118 @@ const SPRITES = [
     nom: "Ironmouse",
     rarity: "Mythic",
     slug: "pedicureantacid",
+  },
+  {
+    id: "BUSH",
+    nom: "Buisson",
+    rarity: "Rare",
+    slug: "c7s4/bush",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "ADVENTURE",
+    nom: "Aventure",
+    rarity: "Rare",
+    slug: "c7s4/adventure",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "8BIT",
+    nom: "8-Bit",
+    rarity: "Rare",
+    slug: "c7s4/eightbit",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "JONESY",
+    nom: "Jonesy",
+    rarity: "Rare",
+    slug: "c7s4/jonesy",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "STORMSCOUT",
+    nom: "Eclaireur de Tempete",
+    rarity: "Rare",
+    slug: "c7s4/stormscout",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "MEGAMAN",
+    nom: "Mega Man",
+    rarity: "Rare",
+    slug: "c7s4/megaman",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "OVERSHIELD",
+    nom: "Overshield",
+    rarity: "Rare",
+    slug: "c7s4/overshield",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "ONIGIRI",
+    nom: "Onigiri",
+    rarity: "Rare",
+    slug: "c7s4/onigiri",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "KILLSWITCH",
+    nom: "Killswitch",
+    rarity: "Epic",
+    slug: "c7s4/killswitch",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "SONIC",
+    nom: "Sonic",
+    rarity: "Epic",
+    slug: "c7s4/sonic",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "TAILS",
+    nom: "Tails",
+    rarity: "Epic",
+    slug: "c7s4/tails",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "SHADOW",
+    nom: "Shadow",
+    rarity: "Epic",
+    slug: "c7s4/shadow",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "JACKRABBIT",
+    nom: "Lievre",
+    rarity: "Legendary",
+    slug: "c7s4/jackrabbit",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "XRAY",
+    nom: "X-Ray",
+    rarity: "Legendary",
+    slug: "c7s4/xray",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "CROWN",
+    nom: "Couronne",
+    rarity: "Mythic",
+    slug: "c7s4/crown",
+    season: "Chapitre 7 - Saison 4",
+  },
+  {
+    id: "KLOMBO",
+    nom: "Klombo",
+    rarity: "Mythic",
+    slug: "c7s4/klombo",
+    season: "Chapitre 7 - Saison 4",
   },
 ];
 
@@ -79,6 +197,22 @@ const VARIANTS_BY_ID = {
   POLLO: ["NORMAL"],
   JOHNWICK: ["NORMAL"],
   IRONMOUSE: ["NORMAL"],
+  BUSH: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  ADVENTURE: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  "8BIT": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  JONESY: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  STORMSCOUT: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  MEGAMAN: ["NORMAL"],
+  OVERSHIELD: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  ONIGIRI: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  KILLSWITCH: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  SONIC: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  TAILS: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  SHADOW: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  JACKRABBIT: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  XRAY: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  CROWN: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+  KLOMBO: ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
 };
 
 const VARIANT_LABEL = {
@@ -90,6 +224,8 @@ const VARIANT_LABEL = {
   HOLOFOIL: "Holographique",
   CUBE: "Cube",
   QUACK: "Coin-coin",
+  CHEATMASTER: "Cheat Master",
+  LOOTHACKER: "Loot Hacker",
 };
 
 // Suffixes réels des images (certains diffèrent du nom de variante)
@@ -102,6 +238,8 @@ const VARIANT_SUFFIX = {
   HOLOFOIL: "holofoil",
   CUBE: "cube",
   QUACK: "quack",
+  CHEATMASTER: "cheatmaster",
+  LOOTHACKER: "loothacker",
 };
 
 // Corrections spécifiques (slug+variant → suffixe réel)
@@ -167,6 +305,8 @@ function entryKey(spriteId, variant) {
 let state = loadState();
 let activeFilter = "all";
 let activeRarity = null;
+let allGroupsCollapsed = false;
+const collapsedSeasons = new Set();
 
 const listEl = document.getElementById("sprite-list");
 const emptyEl = document.getElementById("empty-msg");
@@ -222,6 +362,7 @@ function render() {
   const query = searchEl.value.trim().toLowerCase();
   listEl.innerHTML = "";
   let shown = 0;
+  let lastSeason = null;
 
   for (const sp of SPRITES) {
     // Filtre rareté
@@ -245,9 +386,36 @@ function render() {
 
     shown++;
 
+    const season = sp.season || "Chapitre 7 - Saison 3";
+    if (season !== lastSeason) {
+      const seasonHeader = document.createElement("div");
+      seasonHeader.className = "season-header";
+      seasonHeader.textContent = `${collapsedSeasons.has(season) ? "▸" : "▾"}  ${season}`;
+      seasonHeader.addEventListener("click", () => {
+        if (collapsedSeasons.has(season)) {
+          collapsedSeasons.delete(season);
+        } else {
+          collapsedSeasons.add(season);
+        }
+        allGroupsCollapsed =
+          collapsedSeasons.size ===
+          new Set(
+            SPRITES.map((sprite) => sprite.season || "Chapitre 7 - Saison 3"),
+          ).size;
+        document.getElementById("toggle-all-groups").textContent =
+          allGroupsCollapsed ? "Tout agrandir" : "Tout réduire";
+        render();
+      });
+      listEl.appendChild(seasonHeader);
+      lastSeason = season;
+    }
+
     // Groupe
     const group = document.createElement("div");
     group.className = "sprite-group";
+    if (collapsedSeasons.has(season)) {
+      group.hidden = true;
+    }
     group.dataset.id = sp.id;
 
     // En-tête du groupe
@@ -304,7 +472,7 @@ function render() {
 
     // Mémoriser l'état collapsed du groupe
     const collapsedKey = `collapsed_${sp.id}`;
-    if (sessionStorage.getItem(collapsedKey) === "1") {
+    if (allGroupsCollapsed || sessionStorage.getItem(collapsedKey) === "1") {
       group.classList.add("group-collapsed");
     }
 
@@ -432,6 +600,22 @@ document.querySelectorAll(".filter-btn").forEach((btn) => {
 });
 
 searchEl.addEventListener("input", render);
+
+document.getElementById("toggle-all-groups").addEventListener("click", () => {
+  allGroupsCollapsed = !allGroupsCollapsed;
+  const seasons = new Set(
+    SPRITES.map((sprite) => sprite.season || "Chapitre 7 - Saison 3"),
+  );
+  if (allGroupsCollapsed) {
+    seasons.forEach((season) => collapsedSeasons.add(season));
+  } else {
+    collapsedSeasons.clear();
+  }
+  document.getElementById("toggle-all-groups").textContent = allGroupsCollapsed
+    ? "Tout agrandir"
+    : "Tout réduire";
+  render();
+});
 
 // ── Export ──────────────────────────────────────────────────
 

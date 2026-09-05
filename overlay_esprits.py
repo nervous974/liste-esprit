@@ -30,6 +30,8 @@ VARIANT_META = {
     "HOLOFOIL": {"label": "Holographique", "suffix": "holofoil"},
     "CUBE": {"label": "Cube", "suffix": "cube"},
     "QUACK": {"label": "Coin-coin", "suffix": "quack"},
+    "CHEATMASTER": {"label": "Cheat Master", "suffix": "cheatmaster"},
+    "LOOTHACKER": {"label": "Loot Hacker", "suffix": "loothacker"},
 }
 
 RARITY_BY_OFFICIAL = {
@@ -58,6 +60,22 @@ RARITY_BY_OFFICIAL = {
     "POLLO": "Mythic",
     "JOHN WICK": "Mythic",
     "IRONMOUSE": "Mythic",
+    "BUSH": "Rare",
+    "ADVENTURE": "Rare",
+    "8-BIT": "Rare",
+    "JONESY": "Rare",
+    "STORM SCOUT": "Rare",
+    "MEGA MAN": "Rare",
+    "OVERSHIELD": "Rare",
+    "ONIGIRI": "Rare",
+    "KILLSWITCH": "Epic",
+    "SONIC": "Epic",
+    "TAILS": "Epic",
+    "SHADOW": "Epic",
+    "JACKRABBIT": "Legendary",
+    "X-RAY": "Legendary",
+    "CROWN": "Mythic",
+    "KLOMBO": "Mythic",
 }
 
 RARITY_ORDER = {"Rare": 0, "Epic": 1, "Legendary": 2, "Mythic": 3}
@@ -108,6 +126,22 @@ SPRITE_VARIANTS_BY_OFFICIAL = {
     "POLLO": ["NORMAL"],
     "JOHN WICK": ["NORMAL"],
     "IRONMOUSE": ["NORMAL"],
+    "BUSH": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "ADVENTURE": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "8-BIT": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "JONESY": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "STORM SCOUT": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "MEGA MAN": ["NORMAL"],
+    "OVERSHIELD": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "ONIGIRI": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "KILLSWITCH": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "SONIC": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "TAILS": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "SHADOW": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "JACKRABBIT": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "X-RAY": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "CROWN": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
+    "KLOMBO": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER"],
 }
 
 # Tu peux modifier cette liste dans esprits.txt (un nom par ligne).
@@ -252,6 +286,7 @@ def build_spirit_entries(images_map):
         official = str(item.get("nom_officiel", "")).strip().upper()
         image_url = str(item.get("image", "")).strip()
         slug = str(item.get("slug_source", "")).strip()
+        season = str(item.get("season", "Chapitre 7 - Saison 3")).strip()
         if not base_name or not official or not image_url:
             continue
 
@@ -270,6 +305,7 @@ def build_spirit_entries(images_map):
                     "base_name": base_name,
                     "official": official,
                     "rarity": RARITY_BY_OFFICIAL.get(official, "Rare"),
+                    "season": season,
                     "site_index": site_index,
                     "variant": variant,
                     "variant_label": meta["label"],
@@ -330,11 +366,14 @@ class SpiritOverlayApp:
         self.group_widgets = {}
         self.entry_to_group = {}
         self.collapsed_groups = set()
+        self.season_headers = {}
+        self.collapsed_seasons = set()
         self._pillow_warning_shown = False
 
         self.active_filter = "all"
         self.active_rarity = ""
         self.sort_mode = tk.StringVar(value="Site")
+        self.all_collapsed = False
 
         self._build_ui()
         self._render_spirits()
@@ -476,6 +515,21 @@ class SpiritOverlayApp:
 
         self._refresh_filter_button_states()
 
+        self.expand_all_btn = tk.Button(
+            controls,
+            text="Tout reduire",
+            command=self._toggle_all_groups,
+            relief="flat",
+            bg="#333333",
+            fg="#f0f0f0",
+            activebackground="#444444",
+            activeforeground="#ffffff",
+            font=("Segoe UI", 8, "bold"),
+            padx=8,
+            pady=3,
+        )
+        self.expand_all_btn.pack(anchor="w", pady=(6, 0))
+
         button_line = tk.Frame(self.root, bg="#141414")
         button_line.pack(fill="x", padx=10)
 
@@ -611,6 +665,7 @@ class SpiritOverlayApp:
         self.tk_images.clear()
         self.group_widgets.clear()
         self.entry_to_group.clear()
+        self.season_headers.clear()
 
         grouped = {}
         for name in self.spirit_names:
@@ -619,7 +674,28 @@ class SpiritOverlayApp:
             grouped.setdefault(base_name, []).append(name)
             self.entry_to_group[name] = base_name
 
+        last_season = None
         for base_name, names in grouped.items():
+            season = str(self.entry_by_name.get(names[0], {}).get("season", "Chapitre 7 - Saison 3"))
+            if season != last_season:
+                season_header = tk.Label(
+                    self.list_frame,
+                    text=season.upper(),
+                    bg="#111111",
+                    fg="#f4c95d",
+                    anchor="w",
+                    font=("Segoe UI", 9, "bold"),
+                    padx=8,
+                    pady=5,
+                )
+                season_header.pack(fill="x", padx=4, pady=(8, 2))
+                self.season_headers[season] = season_header
+                season_header.bind(
+                    "<Button-1>",
+                    lambda _e, s=season: self._toggle_season(s),
+                )
+                last_season = season
+
             group_frame = tk.Frame(self.list_frame, bg="#1f1f1f", bd=1, relief="flat")
             group_frame.pack(fill="x", padx=4, pady=4)
 
@@ -693,6 +769,7 @@ class SpiritOverlayApp:
                 "chevron": chevron,
                 "entries": list(names),
                 "rarity": str(self.entry_by_name.get(avatar_name, {}).get("rarity", "Rare")),
+                "season": season,
                 "site_index": min(
                     int(self.entry_by_name.get(n, {}).get("site_index", 10_000))
                     for n in names
@@ -785,6 +862,27 @@ class SpiritOverlayApp:
     def _set_filter(self, mode):
         self.active_filter = mode
         self._refresh_filter_button_states()
+        self._apply_filters()
+
+    def _toggle_all_groups(self):
+        self.all_collapsed = not self.all_collapsed
+        if self.all_collapsed:
+            self.collapsed_groups = set(self.group_widgets.keys())
+            self.collapsed_seasons = set(self.season_headers.keys())
+            self.expand_all_btn.config(text="Tout agrandir")
+        else:
+            self.collapsed_groups.clear()
+            self.collapsed_seasons.clear()
+            self.expand_all_btn.config(text="Tout reduire")
+        self._apply_filters()
+
+    def _toggle_season(self, season):
+        if season in self.collapsed_seasons:
+            self.collapsed_seasons.remove(season)
+        else:
+            self.collapsed_seasons.add(season)
+        self.all_collapsed = len(self.collapsed_seasons) == len(self.season_headers)
+        self.expand_all_btn.config(text="Tout agrandir" if self.all_collapsed else "Tout reduire")
         self._apply_filters()
 
     def _set_rarity(self, rarity):
@@ -921,6 +1019,7 @@ class SpiritOverlayApp:
             group = self.group_widgets[group_name]
             visible_in_group = 0
             collapsed = group_name in self.collapsed_groups
+            season_collapsed = group.get("season") in self.collapsed_seasons
 
             group_rarity = str(group.get("rarity", "Rare"))
             rarity_ok = (not self.active_rarity) or (group_rarity == self.active_rarity)
@@ -962,7 +1061,12 @@ class SpiritOverlayApp:
 
             self._update_group_header(group_name)
 
-            if collapsed or visible_in_group == 0:
+            if season_collapsed and group["frame"].winfo_ismapped():
+                group["frame"].pack_forget()
+            elif visible_in_group > 0 and not group["frame"].winfo_ismapped():
+                group["frame"].pack(fill="x", padx=4, pady=4)
+
+            if collapsed or season_collapsed or visible_in_group == 0:
                 if group["variants"].winfo_ismapped():
                     group["variants"].pack_forget()
             else:
@@ -971,8 +1075,14 @@ class SpiritOverlayApp:
 
         # Re-ordonner les groupes visibles selon le tri choisi.
         for group_name in visible_groups:
-            self.group_widgets[group_name]["frame"].pack_forget()
-            self.group_widgets[group_name]["frame"].pack(fill="x", padx=4, pady=4)
+            group = self.group_widgets[group_name]
+            if group.get("season") not in self.collapsed_seasons:
+                group["frame"].pack_forget()
+                group["frame"].pack(fill="x", padx=4, pady=4)
+
+        for season, header in self.season_headers.items():
+            marker = "▸" if season in self.collapsed_seasons else "▾"
+            header.config(text=f"{marker}  {season.upper()}")
 
     def _reload_from_file(self):
         self.spirit_images = load_spirit_images_map()

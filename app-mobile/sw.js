@@ -1,4 +1,4 @@
-const CACHE = "esprits-fn-v3-mastered";
+const CACHE = "esprits-fn-v4-seasons";
 const ASSETS = [
   "./",
   "./index.html",

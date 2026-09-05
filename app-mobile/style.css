@@ -207,6 +207,18 @@ body {
   overscroll-behavior: contain;
 }
 
+.season-header {
+  margin: 10px 0 6px;
+  padding: 8px 10px;
+  color: var(--gold);
+  background: #111111;
+  border-left: 3px solid var(--gold2);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
 /* Groupes par esprit */
 .sprite-group {
   margin-bottom: 8px;

@@ -4,174 +4,327 @@
     "nom_officiel": "WATER",
     "slug_source": "water",
     "image": "https://spritelocker.com/sprites/water_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Terre",
     "nom_officiel": "EARTH",
     "slug_source": "earth",
     "image": "https://spritelocker.com/sprites/earth_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Feu",
     "nom_officiel": "FIRE",
     "slug_source": "fire",
     "image": "https://spritelocker.com/sprites/fire_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Poiscaille",
     "nom_officiel": "FISHY",
     "slug_source": "fishy",
     "image": "https://spritelocker.com/sprites/fishy_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Air",
     "nom_officiel": "AIR",
     "slug_source": "air",
     "image": "https://spritelocker.com/sprites/air_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Canard",
     "nom_officiel": "DUCK",
     "slug_source": "duck",
     "image": "https://spritelocker.com/sprites/duck_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Fantome",
     "nom_officiel": "GHOST",
     "slug_source": "ghost",
     "image": "https://spritelocker.com/sprites/ghost_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Demon",
     "nom_officiel": "DEMON",
     "slug_source": "demon",
     "image": "https://spritelocker.com/sprites/demon_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Roi",
     "nom_officiel": "KING",
     "slug_source": "king",
     "image": "https://spritelocker.com/sprites/king_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Aura",
     "nom_officiel": "AURA",
     "slug_source": "drifter",
     "image": "https://spritelocker.com/sprites/drifter_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Buteur",
     "nom_officiel": "STRIKER",
     "slug_source": "soccer",
     "image": "https://spritelocker.com/sprites/soccer_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Reve",
     "nom_officiel": "DREAM",
     "slug_source": "dream",
     "image": "https://spritelocker.com/sprites/dream_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Punk",
     "nom_officiel": "PUNK",
     "slug_source": "punk",
     "image": "https://spritelocker.com/sprites/punk_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Boss",
     "nom_officiel": "BOSS",
     "slug_source": "boss",
     "image": "https://spritelocker.com/sprites/boss_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Seven",
     "nom_officiel": "SEVEN",
     "slug_source": "seven",
     "image": "https://spritelocker.com/sprites/seven_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Peeky Peely",
     "nom_officiel": "PEELY",
     "slug_source": "peely",
     "image": "https://spritelocker.com/sprites/peely_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Lootin' Llama",
     "nom_officiel": "LLAMA",
     "slug_source": "llama",
     "image": "https://spritelocker.com/sprites/llama_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Batman",
     "nom_officiel": "BATMAN",
     "slug_source": "fossilmeal",
     "image": "https://spritelocker.com/sprites/fossilmeal_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Faucheuse",
     "nom_officiel": "GRIM REAPER",
     "slug_source": "grimreaper",
     "image": "https://spritelocker.com/sprites/grimreaper_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Point Zero",
     "nom_officiel": "ZERO POINT",
     "slug_source": "zeropoint",
     "image": "https://spritelocker.com/sprites/zeropoint_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Cacahuete Grillee",
     "nom_officiel": "BURNT PEANUT",
     "slug_source": "theburntpeanut",
     "image": "https://spritelocker.com/sprites/theburntpeanut_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Vini Jr.",
     "nom_officiel": "VINI JR",
     "slug_source": "cokeparmesan",
     "image": "https://spritelocker.com/sprites/cokeparmesan_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Pollo",
     "nom_officiel": "POLLO",
     "slug_source": "companystargazer",
     "image": "https://spritelocker.com/sprites/companystargazer_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "John Wick",
     "nom_officiel": "JOHN WICK",
     "slug_source": "fillergrunt",
     "image": "https://spritelocker.com/sprites/fillergrunt_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
   },
   {
     "nom": "Ironmouse",
     "nom_officiel": "IRONMOUSE",
     "slug_source": "pedicureantacid",
     "image": "https://spritelocker.com/sprites/pedicureantacid_basic.webp",
-    "released": true
+    "released": true,
+    "season": "Chapitre 7 - Saison 3"
+  },
+  {
+    "nom": "Buisson",
+    "nom_officiel": "BUSH",
+    "slug_source": "c7s4/bush",
+    "image": "https://spritelocker.com/sprites/c7s4/bush_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Aventure",
+    "nom_officiel": "ADVENTURE",
+    "slug_source": "c7s4/adventure",
+    "image": "https://spritelocker.com/sprites/c7s4/adventure_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "8-Bit",
+    "nom_officiel": "8-BIT",
+    "slug_source": "c7s4/eightbit",
+    "image": "https://spritelocker.com/sprites/c7s4/eightbit_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Jonesy",
+    "nom_officiel": "JONESY",
+    "slug_source": "c7s4/jonesy",
+    "image": "https://spritelocker.com/sprites/c7s4/jonesy_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Eclaireur de Tempete",
+    "nom_officiel": "STORM SCOUT",
+    "slug_source": "c7s4/stormscout",
+    "image": "https://spritelocker.com/sprites/c7s4/stormscout_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Mega Man",
+    "nom_officiel": "MEGA MAN",
+    "slug_source": "c7s4/megaman",
+    "image": "https://spritelocker.com/sprites/c7s4/megaman_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Overshield",
+    "nom_officiel": "OVERSHIELD",
+    "slug_source": "c7s4/overshield",
+    "image": "https://spritelocker.com/sprites/c7s4/overshield_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Onigiri",
+    "nom_officiel": "ONIGIRI",
+    "slug_source": "c7s4/onigiri",
+    "image": "https://spritelocker.com/sprites/c7s4/onigiri_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Killswitch",
+    "nom_officiel": "KILLSWITCH",
+    "slug_source": "c7s4/killswitch",
+    "image": "https://spritelocker.com/sprites/c7s4/killswitch_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Sonic",
+    "nom_officiel": "SONIC",
+    "slug_source": "c7s4/sonic",
+    "image": "https://spritelocker.com/sprites/c7s4/sonic_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Tails",
+    "nom_officiel": "TAILS",
+    "slug_source": "c7s4/tails",
+    "image": "https://spritelocker.com/sprites/c7s4/tails_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Shadow",
+    "nom_officiel": "SHADOW",
+    "slug_source": "c7s4/shadow",
+    "image": "https://spritelocker.com/sprites/c7s4/shadow_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Lievre",
+    "nom_officiel": "JACKRABBIT",
+    "slug_source": "c7s4/jackrabbit",
+    "image": "https://spritelocker.com/sprites/c7s4/jackrabbit_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "X-Ray",
+    "nom_officiel": "X-RAY",
+    "slug_source": "c7s4/xray",
+    "image": "https://spritelocker.com/sprites/c7s4/xray_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Couronne",
+    "nom_officiel": "CROWN",
+    "slug_source": "c7s4/crown",
+    "image": "https://spritelocker.com/sprites/c7s4/crown_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Klombo",
+    "nom_officiel": "KLOMBO",
+    "slug_source": "c7s4/klombo",
+    "image": "https://spritelocker.com/sprites/c7s4/klombo_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
   }
 ]

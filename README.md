@@ -2,7 +2,7 @@
 
 Petit outil Windows en Python pour suivre les esprits recuperes.
 
-Le mode actuel suit les variantes (Normal, Or, Gelifie, etc.) pour un total de 109 entrees.
+Le mode actuel suit les variantes par saison (Normal, Or, Gelifie, Gemme, Cheat Master, etc.).
 
 ## Fonctionnalites
 
