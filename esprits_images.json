@@ -264,10 +264,10 @@
     "season": "Chapitre 7 - Saison 4"
   },
   {
-    "nom": "Killswitch",
-    "nom_officiel": "KILLSWITCH",
-    "slug_source": "c7s4/killswitch",
-    "image": "https://spritelocker.com/sprites/c7s4/killswitch_basic.webp",
+    "nom": "Anniversaire",
+    "nom_officiel": "BIRTHDAY",
+    "slug_source": "c7s4/birthday",
+    "image": "https://spritelocker.com/sprites/c7s4/birthday_basic.webp",
     "released": true,
     "season": "Chapitre 7 - Saison 4"
   },
@@ -296,6 +296,30 @@
     "season": "Chapitre 7 - Saison 4"
   },
   {
+    "nom": "Overshield",
+    "nom_officiel": "OVERSHIELD",
+    "slug_source": "c7s4/overshield",
+    "image": "https://spritelocker.com/sprites/c7s4/overshield_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Etang",
+    "nom_officiel": "POND",
+    "slug_source": "c7s4/pond",
+    "image": "https://spritelocker.com/sprites/c7s4/pond_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Morgana",
+    "nom_officiel": "MORGANA",
+    "slug_source": "c7s4/morgana",
+    "image": "https://spritelocker.com/sprites/c7s4/morgana_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
     "nom": "Lievre",
     "nom_officiel": "JACKRABBIT",
     "slug_source": "c7s4/jackrabbit",
@@ -308,6 +332,30 @@
     "nom_officiel": "X-RAY",
     "slug_source": "c7s4/xray",
     "image": "https://spritelocker.com/sprites/c7s4/xray_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Killswitch",
+    "nom_officiel": "KILLSWITCH",
+    "slug_source": "c7s4/killswitch",
+    "image": "https://spritelocker.com/sprites/c7s4/killswitch_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Crash Bandicoot",
+    "nom_officiel": "CRASH BANDICOOT",
+    "slug_source": "c7s4/crashbandicoot",
+    "image": "https://spritelocker.com/sprites/c7s4/crashbandicoot_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Blinky",
+    "nom_officiel": "BLINKY",
+    "slug_source": "c7s4/blinky",
+    "image": "https://spritelocker.com/sprites/c7s4/blinky_basic.webp",
     "released": true,
     "season": "Chapitre 7 - Saison 4"
   },
