@@ -2,7 +2,7 @@
 
 Petit outil Windows en Python pour suivre les esprits recuperes.
 
-Le mode actuel suit les variantes par saison (Normal, Or, Gelifie, Gemme, Cheat Master, etc.).
+Le tracker suit le Chapitre 7 Saison 4 : 20 esprits et 96 variantes, dont Morgana et Bounty Hunter. Mega Man n'a que sa variante Normal.
 
 ## Fonctionnalites
 

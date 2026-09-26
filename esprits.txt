@@ -1,25 +1,20 @@
-Eau
-Terre
-Feu
-Poiscaille
-Air
-Canard
-Fantome
-Demon
-Roi
-Aura
-Buteur
-Reve
-Punk
-Boss
-Seven
-Peeky Peely
-Lootin' Llama
-Batman
-Faucheuse
-Point Zero
-Cacahuete Grillee
-Vini Jr.
-Pollo
-John Wick
-Ironmouse
+Buisson
+Aventure
+8-Bit
+Jonesy
+Eclaireur de Tempete
+Mega Man
+Onigiri
+Sonic
+Tails
+Shadow
+Etang
+Overshield
+Morgana
+Lievre
+X-Ray
+Killswitch
+Crash Bandicoot
+Blinky
+Couronne
+Klombo

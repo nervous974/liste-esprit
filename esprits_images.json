@@ -256,18 +256,18 @@
     "season": "Chapitre 7 - Saison 4"
   },
   {
-    "nom": "Onigiri",
-    "nom_officiel": "ONIGIRI",
-    "slug_source": "c7s4/onigiri",
-    "image": "https://spritelocker.com/sprites/c7s4/onigiri_basic.webp",
+    "nom": "Morgana",
+    "nom_officiel": "MORGANA",
+    "slug_source": "c7s4/morgana",
+    "image": "https://spritelocker.com/sprites/c7s4/morgana_basic.webp",
     "released": true,
     "season": "Chapitre 7 - Saison 4"
   },
   {
-    "nom": "Anniversaire",
-    "nom_officiel": "BIRTHDAY",
-    "slug_source": "c7s4/birthday",
-    "image": "https://spritelocker.com/sprites/c7s4/birthday_basic.webp",
+    "nom": "Onigiri",
+    "nom_officiel": "ONIGIRI",
+    "slug_source": "c7s4/onigiri",
+    "image": "https://spritelocker.com/sprites/c7s4/onigiri_basic.webp",
     "released": true,
     "season": "Chapitre 7 - Saison 4"
   },
@@ -296,26 +296,10 @@
     "season": "Chapitre 7 - Saison 4"
   },
   {
-    "nom": "Overshield",
-    "nom_officiel": "OVERSHIELD",
-    "slug_source": "c7s4/overshield",
-    "image": "https://spritelocker.com/sprites/c7s4/overshield_basic.webp",
-    "released": true,
-    "season": "Chapitre 7 - Saison 4"
-  },
-  {
     "nom": "Etang",
     "nom_officiel": "POND",
     "slug_source": "c7s4/pond",
     "image": "https://spritelocker.com/sprites/c7s4/pond_basic.webp",
-    "released": true,
-    "season": "Chapitre 7 - Saison 4"
-  },
-  {
-    "nom": "Morgana",
-    "nom_officiel": "MORGANA",
-    "slug_source": "c7s4/morgana",
-    "image": "https://spritelocker.com/sprites/c7s4/morgana_basic.webp",
     "released": true,
     "season": "Chapitre 7 - Saison 4"
   },

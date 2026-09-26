@@ -20,6 +20,7 @@ STATE_FILE = os.path.join(BASE_DIR, "etat_esprits.json")
 MASTERED_STATE_FILE = os.path.join(BASE_DIR, "etat_esprits_maitrise.json")
 SPIRIT_IMAGES_FILE = os.path.join(BASE_DIR, "esprits_images.json")
 IMAGE_CACHE_DIR = os.path.join(BASE_DIR, "cache_esprits")
+ACTIVE_SEASON = "Chapitre 7 - Saison 4"
 
 VARIANT_META = {
     "NORMAL": {"label": "Normal", "suffix": "basic"},
@@ -106,6 +107,29 @@ VARIANT_SUFFIX_OVERRIDES = {
 }
 
 # Liste derivee des donnees source pour obtenir exactement les entrees publiees.
+CURRENT_SEASON_VARIANTS = {
+    "BUSH": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "ADVENTURE": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "8-BIT": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "JONESY": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "STORM SCOUT": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "MEGA MAN": ["NORMAL"],
+    "ONIGIRI": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "SONIC": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "TAILS": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "SHADOW": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "POND": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "OVERSHIELD": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "MORGANA": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "JACKRABBIT": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "X-RAY": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "KILLSWITCH": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "CRASH BANDICOOT": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "BLINKY": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "CROWN": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+    "KLOMBO": ["NORMAL", "GOLD", "CHEATMASTER", "LOOTHACKER", "BOUNTYHUNTER"],
+}
+
 SPRITE_VARIANTS_BY_OFFICIAL = {
     "WATER": ["NORMAL", "GOLD", "GUMMY", "GALAXY", "GEM", "HOLOFOIL", "QUACK"],
     "EARTH": ["NORMAL", "GOLD", "GUMMY", "GALAXY", "GEM", "CUBE", "QUACK"],
@@ -290,7 +314,7 @@ def build_spirit_entries(images_map):
     entries = []
 
     for site_index, (_, item) in enumerate(images_map.items()):
-        if not bool(item.get("released", True)):
+        if item.get("season") != ACTIVE_SEASON or not bool(item.get("released", True)):
             continue
 
         base_name = str(item.get("nom", "")).strip()
@@ -301,7 +325,7 @@ def build_spirit_entries(images_map):
         if not base_name or not official or not image_url:
             continue
 
-        variants = SPRITE_VARIANTS_BY_OFFICIAL.get(official, ["NORMAL"])
+        variants = CURRENT_SEASON_VARIANTS.get(official, ["NORMAL"])
         for variant in variants:
             meta = VARIANT_META.get(variant)
             if meta is None:
