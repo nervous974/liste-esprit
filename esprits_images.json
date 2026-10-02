@@ -358,5 +358,45 @@
     "image": "https://spritelocker.com/sprites/c7s4/klombo_basic.webp",
     "released": true,
     "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Anniversaire",
+    "nom_officiel": "BIRTHDAY",
+    "slug_source": "c7s4/birthday",
+    "image": "https://spritelocker.com/sprites/c7s4/birthday_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Fouille-poubelle",
+    "nom_officiel": "DUMPSTER DIVE",
+    "slug_source": "c7s4/dumpsterdive",
+    "image": "https://spritelocker.com/sprites/c7s4/dumpsterdive_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Le Cerf",
+    "nom_officiel": "THE DEER",
+    "slug_source": "c7s4/thedeer",
+    "image": "https://spritelocker.com/sprites/c7s4/thedeer_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Vampire",
+    "nom_officiel": "VAMPIRE",
+    "slug_source": "c7s4/vampire",
+    "image": "https://spritelocker.com/sprites/c7s4/vampire_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
+  },
+  {
+    "nom": "Ruée spectrale",
+    "nom_officiel": "SPOOKY DASH",
+    "slug_source": "c7s4/spookydash",
+    "image": "https://spritelocker.com/sprites/c7s4/spookydash_basic.webp",
+    "released": true,
+    "season": "Chapitre 7 - Saison 4"
   }
 ]

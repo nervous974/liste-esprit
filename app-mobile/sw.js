@@ -1,4 +1,4 @@
-const CACHE = "esprits-fn-v5-bounty-hunter";
+const CACHE = "esprits-fn-v6-trick-or-treat";
 const ASSETS = [
   "./",
   "./index.html",

@@ -2,7 +2,7 @@
 
 Petit outil Windows en Python pour suivre les esprits recuperes.
 
-Le tracker suit le Chapitre 7 Saison 4 : 20 esprits et 96 variantes, dont Morgana et Bounty Hunter. Mega Man n'a que sa variante Normal.
+Le tracker suit le Chapitre 7 Saison 4 : 25 esprits et 145 variantes, dont les ajouts d'Halloween et Trick or Treat. Mega Man n'a que sa variante Normal.
 
 ## Fonctionnalites
 
