@@ -580,22 +580,49 @@ function calcProgress() {
   let total = 0,
     owned = 0,
     mastered = 0;
+  const chapters = new Map();
+  const seasons = new Map();
+
   for (const sp of SPRITES) {
+    const season = sp.season || "Chapitre 7 - Saison 3";
+    const [chapter] = season.split(" - ");
+
     for (const v of VARIANTS_BY_ID[sp.id] || ["NORMAL"]) {
       const k = entryKey(sp.id, v);
+      const isOwned = Boolean(state.owned[k]);
+      const isMastered = Boolean(state.mastered[k]);
       total++;
-      if (state.owned[k]) owned++;
-      if (state.mastered[k]) mastered++;
+      if (isOwned) owned++;
+      if (isMastered) mastered++;
+
+      for (const [totals, name] of [
+        [chapters, chapter],
+        [seasons, season],
+      ]) {
+        const scope = totals.get(name) || { total: 0, owned: 0 };
+        scope.total++;
+        if (isOwned) scope.owned++;
+        totals.set(name, scope);
+      }
     }
   }
-  return { total, owned, mastered };
+  return { total, owned, mastered, chapters, seasons };
 }
 
 function updateProgress() {
-  const { total, owned, mastered } = calcProgress();
+  const { total, owned, mastered, chapters, seasons } = calcProgress();
   const pct = total ? Math.round((owned / total) * 100) : 0;
   progBar.style.width = pct + "%";
-  progText.textContent = `${owned} / ${total} obtenus | 👑 ${mastered}`;
+  const chapterSummary = [...chapters]
+    .map(([name, counts]) => `${name}: ${counts.owned}/${counts.total}`)
+    .join(" • ");
+  const seasonSummary = [...seasons]
+    .map(([name, counts]) => {
+      const label = name.split(" - ").at(-1) || name;
+      return `${label}: ${counts.owned}/${counts.total}`;
+    })
+    .join(" • ");
+  progText.textContent = `${owned} / ${total} obtenus | 👑 ${mastered}\n${chapterSummary}\n${seasonSummary}`;
   pctEl.textContent = pct + "%";
   const circ = 2 * Math.PI * 18;
   ringFill.style.strokeDashoffset = circ - (circ * pct) / 100;

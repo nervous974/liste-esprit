@@ -647,6 +647,9 @@ class SpiritOverlayApp:
             bg="#141414",
             fg="#f4c95d",
             font=("Segoe UI", 10, "bold"),
+            anchor="w",
+            justify="left",
+            wraplength=390,
         )
         self.progress_label.pack(anchor="w", padx=10, pady=(10, 6))
 
@@ -1053,7 +1056,29 @@ class SpiritOverlayApp:
         owned = sum(1 for n in self.spirit_names if self.state.get(n, False))
         mastered = sum(1 for n in self.spirit_names if self.mastered_state.get(n, False))
         percent = int((owned / total) * 100) if total else 0
-        self.progress_label.config(text=f"Progression: {owned}/{total} ({percent}%) | 👑 {mastered}")
+
+        chapters = {}
+        seasons = {}
+        for name in self.spirit_names:
+            entry = self.entry_by_name.get(name, {})
+            season = str(entry.get("season", ACTIVE_SEASON)).strip()
+            chapter, separator, season_label = season.partition(" - ")
+            if not separator:
+                chapter = season
+                season_label = season
+
+            chapters.setdefault(chapter, [0, 0])
+            seasons.setdefault(season_label, [0, 0])
+            chapters[chapter][1] += 1
+            seasons[season_label][1] += 1
+            if self.state.get(name, False):
+                chapters[chapter][0] += 1
+                seasons[season_label][0] += 1
+
+        lines = [f"Progression: {owned}/{total} ({percent}%) | 👑 {mastered}"]
+        lines.extend(f"{chapter}: {counts[0]}/{counts[1]}" for chapter, counts in chapters.items())
+        lines.extend(f"{season}: {counts[0]}/{counts[1]}" for season, counts in seasons.items())
+        self.progress_label.config(text="\n".join(lines))
 
     def _apply_filters(self):
         query = self.search_var.get().strip().lower()

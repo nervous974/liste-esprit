@@ -124,6 +124,8 @@ body {
   font-size: 11px;
   color: var(--text2);
   text-align: center;
+  line-height: 1.4;
+  white-space: pre-line;
   margin-bottom: 10px;
 }
 
